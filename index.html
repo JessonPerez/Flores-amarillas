@@ -1,16 +1,18 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Para mi Chinita 💛</title>
 
-    <style>
 
-        /* =====================================================
-           CONFIGURACIÓN GENERAL
-        ===================================================== */
+    <style>
 
         * {
             margin: 0;
@@ -25,8 +27,11 @@
         body {
             min-height: 100vh;
             overflow-x: hidden;
+
             font-family: "Segoe UI", Arial, sans-serif;
+
             background: #080b16;
+
             color: white;
         }
 
@@ -36,98 +41,141 @@
         ===================================================== */
 
         #inicio {
+
             position: fixed;
+
             inset: 0;
+
             z-index: 1000;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
             background:
-                radial-gradient(circle at center,
-                rgba(255, 210, 70, 0.08),
-                transparent 40%),
+                radial-gradient(
+                    circle at center,
+                    rgba(255, 210, 70, 0.10),
+                    transparent 40%
+                ),
                 linear-gradient(
                     180deg,
                     #050711,
                     #11182b
                 );
 
-            transition: opacity 1.5s ease,
-                        visibility 1.5s ease;
+            transition:
+                opacity 1.5s ease,
+                visibility 1.5s ease;
         }
 
+
         #inicio.ocultar {
+
             opacity: 0;
+
             visibility: hidden;
         }
 
+
         .inicio-contenido {
+
             width: 90%;
+
             max-width: 600px;
+
             text-align: center;
+
             padding: 30px;
         }
 
+
         .pequena-flor {
+
             font-size: 65px;
-            animation: respirar 2.5s infinite ease-in-out;
+
+            animation:
+                respirar 2.5s infinite ease-in-out;
+
             margin-bottom: 20px;
         }
 
+
         .inicio-contenido h1 {
+
             font-family: Georgia, serif;
-            font-size: clamp(2rem, 7vw, 4rem);
+
+            font-size:
+                clamp(2rem, 7vw, 4rem);
+
             font-weight: normal;
+
             margin-bottom: 15px;
         }
 
+
         .inicio-contenido p {
+
             color: #ddd;
+
             font-size: 1.05rem;
+
             line-height: 1.7;
+
             margin-bottom: 35px;
         }
 
+
         .boton-sorpresa {
+
             border: none;
+
             cursor: pointer;
 
             padding: 16px 30px;
 
             border-radius: 50px;
 
-            background: linear-gradient(
-                135deg,
-                #ffd93d,
-                #ffb300
-            );
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd93d,
+                    #ffb300
+                );
 
             color: #302300;
 
             font-size: 1rem;
+
             font-weight: bold;
 
             box-shadow:
-                0 0 20px rgba(255, 213, 60, 0.3);
+                0 0 20px
+                rgba(255, 213, 60, 0.3);
 
             transition: 0.3s;
         }
 
+
         .boton-sorpresa:hover {
+
             transform: scale(1.07);
 
             box-shadow:
-                0 0 35px rgba(255, 213, 60, 0.6);
+                0 0 35px
+                rgba(255, 213, 60, 0.6);
         }
 
 
+
         /* =====================================================
-           CONTENEDOR PRINCIPAL
+           PAGINA PRINCIPAL
         ===================================================== */
 
         #pagina {
+
             min-height: 100vh;
 
             opacity: 0;
@@ -144,9 +192,12 @@
                 );
         }
 
+
         #pagina.mostrar {
+
             opacity: 1;
         }
+
 
 
         /* =====================================================
@@ -154,11 +205,15 @@
         ===================================================== */
 
         .cielo {
+
             position: absolute;
+
             top: 0;
+
             left: 0;
 
             width: 100%;
+
             height: 65vh;
 
             overflow: hidden;
@@ -166,10 +221,13 @@
             pointer-events: none;
         }
 
+
         .luna {
+
             position: absolute;
 
             width: 100px;
+
             height: 100px;
 
             border-radius: 50%;
@@ -177,12 +235,17 @@
             background: #fff6c7;
 
             top: 10%;
+
             right: 12%;
 
             box-shadow:
-                0 0 30px rgba(255, 246, 199, 0.5),
-                0 0 80px rgba(255, 246, 199, 0.2);
+                0 0 30px
+                rgba(255,246,199,0.5),
+
+                0 0 80px
+                rgba(255,246,199,0.2);
         }
+
 
 
         /* =====================================================
@@ -190,110 +253,150 @@
         ===================================================== */
 
         .estrella {
+
             position: absolute;
 
             width: 3px;
+
             height: 3px;
 
             background: white;
 
             border-radius: 50%;
 
-            animation: brillar 3s infinite ease-in-out;
+            animation:
+                brillar 3s infinite ease-in-out;
         }
 
+
         .estrella:nth-child(1) {
+
             top: 15%;
             left: 12%;
         }
 
+
         .estrella:nth-child(2) {
+
             top: 25%;
             left: 30%;
+
             animation-delay: 1s;
         }
 
+
         .estrella:nth-child(3) {
+
             top: 12%;
             left: 52%;
-            animation-delay: 0.5s;
+
+            animation-delay: .5s;
         }
 
+
         .estrella:nth-child(4) {
+
             top: 35%;
             left: 70%;
+
             animation-delay: 1.5s;
         }
 
+
         .estrella:nth-child(5) {
+
             top: 20%;
             left: 85%;
+
             animation-delay: 2s;
         }
 
+
         .estrella:nth-child(6) {
+
             top: 45%;
             left: 20%;
+
             animation-delay: 1.2s;
         }
 
+
         .estrella:nth-child(7) {
+
             top: 30%;
             left: 90%;
-            animation-delay: 0.8s;
+
+            animation-delay: .8s;
         }
 
+
         .estrella:nth-child(8) {
+
             top: 8%;
             left: 40%;
+
             animation-delay: 2.2s;
         }
 
 
+
         /* =====================================================
-           CONTENIDO ROMÁNTICO
+           CONTENIDO
         ===================================================== */
 
         .contenido {
+
             position: relative;
+
             z-index: 10;
 
             min-height: 100vh;
 
             display: flex;
+
             flex-direction: column;
 
             justify-content: center;
+
             align-items: center;
 
             text-align: center;
 
-            padding: 80px 20px 300px;
+            padding:
+                80px 20px 300px;
         }
 
+
         .encabezado {
+
             max-width: 750px;
 
             margin-top: 20vh;
 
-            animation: aparecer 2s ease;
+            animation:
+                aparecer 2s ease;
         }
 
+
         .encabezado .flor {
+
             font-size: 65px;
 
             animation:
                 respirar 3s infinite ease-in-out;
         }
 
+
         .encabezado h2 {
+
             font-family: Georgia, serif;
 
-            font-size: clamp(
-                2.3rem,
-                8vw,
-                5rem
-            );
+            font-size:
+                clamp(
+                    2.3rem,
+                    8vw,
+                    5rem
+                );
 
             font-weight: normal;
 
@@ -302,10 +405,13 @@
             color: #ffe77b;
 
             text-shadow:
-                0 0 20px rgba(255, 220, 80, 0.25);
+                0 0 20px
+                rgba(255,220,80,.25);
         }
 
+
         .subtitulo {
+
             font-size: 1.1rem;
 
             color: #eee;
@@ -314,12 +420,15 @@
         }
 
 
+
         /* =====================================================
            CARTA
         ===================================================== */
 
         .carta {
+
             width: 100%;
+
             max-width: 720px;
 
             margin-top: 80px;
@@ -327,20 +436,24 @@
             padding: 40px 30px;
 
             background:
-                rgba(255, 255, 255, 0.07);
+                rgba(255,255,255,.07);
 
             border:
-                1px solid rgba(255, 255, 255, 0.12);
+                1px solid
+                rgba(255,255,255,.12);
 
             border-radius: 25px;
 
             backdrop-filter: blur(10px);
 
             box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.25);
+                0 20px 60px
+                rgba(0,0,0,.25);
         }
 
+
         .carta h3 {
+
             font-family: Georgia, serif;
 
             color: #ffe36e;
@@ -350,7 +463,9 @@
             margin-bottom: 30px;
         }
 
+
         #mensaje {
+
             min-height: 230px;
 
             font-family: Georgia, serif;
@@ -364,10 +479,13 @@
             white-space: pre-line;
         }
 
+
         .cursor {
+
             display: inline-block;
 
             width: 2px;
+
             height: 22px;
 
             background: #ffd93d;
@@ -375,15 +493,17 @@
             margin-left: 3px;
 
             animation:
-                parpadear 0.8s infinite;
+                parpadear .8s infinite;
         }
 
 
+
         /* =====================================================
-           CONTADOR / ANIVERSARIO
+           ANIVERSARIO
         ===================================================== */
 
         .aniversario {
+
             margin-top: 40px;
 
             padding: 25px;
@@ -391,19 +511,24 @@
             border-radius: 20px;
 
             background:
-                rgba(255, 211, 61, 0.08);
+                rgba(255,211,61,.08);
 
             border:
-                1px solid rgba(255, 211, 61, 0.2);
+                1px solid
+                rgba(255,211,61,.2);
         }
 
+
         .aniversario p {
+
             color: #ddd;
 
             margin-bottom: 8px;
         }
 
+
         .aniversario strong {
+
             color: #ffe36e;
 
             font-size: 1.5rem;
@@ -412,21 +537,29 @@
         }
 
 
+
         /* =====================================================
-           BOTÓN MÚSICA
+           MÚSICA
         ===================================================== */
 
         .musica {
+
             margin-top: 35px;
+
+            width: 100%;
         }
 
+
         .boton-musica {
+
             cursor: pointer;
 
-            border: 1px solid rgba(255,255,255,0.2);
+            border:
+                1px solid
+                rgba(255,255,255,.2);
 
             background:
-                rgba(255,255,255,0.08);
+                rgba(255,255,255,.08);
 
             color: white;
 
@@ -434,28 +567,78 @@
 
             border-radius: 50px;
 
-            transition: 0.3s;
+            transition: .3s;
         }
+
 
         .boton-musica:hover {
-            background:
-                rgba(255,255,255,0.15);
 
-            transform: translateY(-2px);
+            background:
+                rgba(255,255,255,.15);
+
+            transform:
+                translateY(-2px);
         }
+
+
+        .youtube-musica {
+
+            display: none;
+
+            margin-top: 25px;
+
+            width: 100%;
+
+            overflow: hidden;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(0,0,0,.35);
+        }
+
+
+        .youtube-musica.mostrar {
+
+            display: block;
+
+            animation:
+                aparecer 1s ease;
+        }
+
+
+        .youtube-musica iframe {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 560px;
+
+            height: 315px;
+
+            margin: auto;
+
+            border-radius: 18px;
+        }
+
 
 
         /* =====================================================
-           FLORES
+           CAMPO DE FLORES
         ===================================================== */
 
         .campo {
+
             position: absolute;
 
             left: 0;
+
             bottom: 0;
 
             width: 100%;
+
             height: 300px;
 
             overflow: hidden;
@@ -463,13 +646,17 @@
             pointer-events: none;
         }
 
+
         .pasto {
+
             position: absolute;
 
             bottom: 0;
+
             left: 0;
 
             width: 100%;
+
             height: 80px;
 
             background:
@@ -480,7 +667,9 @@
                 );
         }
 
+
         .flor-campo {
+
             position: absolute;
 
             bottom: 45px;
@@ -502,16 +691,20 @@
             opacity: 0;
         }
 
+
         .flor-cabeza {
+
             position: absolute;
 
             top: -24px;
+
             left: 50%;
 
             transform:
                 translateX(-50%);
 
             width: 48px;
+
             height: 48px;
 
             border-radius: 50%;
@@ -523,20 +716,17 @@
                     transparent 19%
                 );
 
-            background-color:
-                #ffd83d;
+            background-color: #ffd83d;
 
             box-shadow:
-                0 0 10px rgba(
-                    255,
-                    216,
-                    61,
-                    0.25
-                );
+                0 0 10px
+                rgba(255,216,61,.25);
         }
+
 
         .flor-cabeza::before,
         .flor-cabeza::after {
+
             content: "";
 
             position: absolute;
@@ -555,9 +745,12 @@
             z-index: -1;
         }
 
+
         .flor-cabeza::after {
+
             transform: rotate(45deg);
         }
+
 
 
         /* =====================================================
@@ -565,11 +758,13 @@
         ===================================================== */
 
         .petalo {
+
             position: fixed;
 
             top: -40px;
 
             width: 14px;
+
             height: 20px;
 
             border-radius:
@@ -577,7 +772,7 @@
 
             background: #ffd83d;
 
-            opacity: 0.8;
+            opacity: .8;
 
             z-index: 50;
 
@@ -588,11 +783,13 @@
         }
 
 
+
         /* =====================================================
            CORAZONES
         ===================================================== */
 
         .corazon {
+
             position: fixed;
 
             bottom: -30px;
@@ -606,6 +803,7 @@
             animation:
                 subirCorazon 6s linear forwards;
         }
+
 
 
         /* =====================================================
@@ -623,10 +821,11 @@
             }
         }
 
+
         @keyframes brillar {
 
-            0%, 100% {
-                opacity: 0.2;
+            0%,100% {
+                opacity: .2;
                 transform: scale(1);
             }
 
@@ -636,33 +835,39 @@
             }
         }
 
+
         @keyframes aparecer {
 
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform:
+                    translateY(30px);
             }
 
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform:
+                    translateY(0);
             }
         }
 
+
         @keyframes parpadear {
 
-            0%, 50% {
+            0%,50% {
                 opacity: 1;
             }
 
-            51%, 100% {
+            51%,100% {
                 opacity: 0;
             }
         }
 
+
         @keyframes crecerFlor {
 
             from {
+
                 transform:
                     scaleY(0)
                     rotate(-5deg);
@@ -671,6 +876,7 @@
             }
 
             to {
+
                 transform:
                     scaleY(1)
                     rotate(0);
@@ -679,9 +885,11 @@
             }
         }
 
+
         @keyframes caer {
 
             0% {
+
                 transform:
                     translateY(-50px)
                     translateX(0)
@@ -689,6 +897,7 @@
             }
 
             25% {
+
                 transform:
                     translateY(25vh)
                     translateX(40px)
@@ -696,6 +905,7 @@
             }
 
             50% {
+
                 transform:
                     translateY(50vh)
                     translateX(-40px)
@@ -703,6 +913,7 @@
             }
 
             75% {
+
                 transform:
                     translateY(75vh)
                     translateX(30px)
@@ -710,6 +921,7 @@
             }
 
             100% {
+
                 transform:
                     translateY(110vh)
                     translateX(-20px)
@@ -717,21 +929,24 @@
             }
         }
 
+
         @keyframes subirCorazon {
 
             0% {
+
                 transform:
                     translateY(0)
-                    scale(0.8);
+                    scale(.8);
 
                 opacity: 0;
             }
 
             15% {
-                opacity: 0.8;
+                opacity: .8;
             }
 
             100% {
+
                 transform:
                     translateY(-110vh)
                     translateX(50px)
@@ -742,34 +957,46 @@
         }
 
 
+
         /* =====================================================
-           CELULARES
+           CELULAR
         ===================================================== */
 
         @media (max-width: 600px) {
 
             .luna {
+
                 width: 70px;
+
                 height: 70px;
 
                 right: 10%;
+
                 top: 8%;
             }
 
+
             .contenido {
-                padding-top: 60px;
-                padding-bottom: 260px;
+
+                padding:
+                    60px 20px 260px;
             }
 
+
             .encabezado {
+
                 margin-top: 15vh;
             }
 
+
             .encabezado .flor {
+
                 font-size: 50px;
             }
 
+
             .carta {
+
                 padding: 30px 20px;
 
                 margin-top: 60px;
@@ -777,11 +1004,15 @@
                 border-radius: 20px;
             }
 
+
             .carta h3 {
+
                 font-size: 1.7rem;
             }
 
+
             #mensaje {
+
                 font-size: 1.05rem;
 
                 line-height: 1.9;
@@ -789,30 +1020,50 @@
                 min-height: 300px;
             }
 
+
             .campo {
+
                 height: 250px;
             }
 
+
             .flor-cabeza {
+
                 width: 38px;
+
                 height: 38px;
             }
 
+
             .inicio-contenido {
+
                 padding: 20px;
             }
 
+
             .pequena-flor {
+
                 font-size: 50px;
             }
 
+
             .inicio-contenido p {
-                font-size: 0.95rem;
+
+                font-size: .95rem;
             }
+
+
+            .youtube-musica iframe {
+
+                height: 210px;
+            }
+
         }
 
     </style>
+
 </head>
+
 
 
 <body>
@@ -830,14 +1081,17 @@
                 🌻
             </div>
 
+
             <h1>
                 Tengo algo para ti...
             </h1>
+
 
             <p>
                 Una pequeña sorpresa para la mujer
                 que hace mis días mucho más bonitos.
             </p>
+
 
             <button
                 class="boton-sorpresa"
@@ -854,7 +1108,7 @@
 
 
     <!-- =====================================================
-         PÁGINA PRINCIPAL
+         PAGINA PRINCIPAL
     ====================================================== -->
 
     <main id="pagina">
@@ -890,15 +1144,21 @@
                     🌻
                 </div>
 
+
                 <h2>
                     Para mi chinita
                 </h2>
 
+
                 <p class="subtitulo">
+
                     Hoy quería regalarte algo amarillo...
+
                     <br>
+
                     pero terminé queriendo regalarte
                     un pedacito de mi corazón.
+
                 </p>
 
             </div>
@@ -913,9 +1173,12 @@
                     Mi chinita ❤️
                 </h3>
 
+
                 <div id="mensaje"></div>
 
+
                 <span class="cursor"></span>
+
 
 
                 <!-- ANIVERSARIO -->
@@ -927,9 +1190,11 @@
                         muy presente en mi corazón...
                     </p>
 
+
                     <strong>
                         4 años de nosotros ❤️
                     </strong>
+
 
                     <p>
                         25 de octubre
@@ -938,41 +1203,34 @@
                 </div>
 
 
-                <!-- MÚSICA -->
+
+                <!-- MUSICA -->
 
                 <div class="musica">
 
                     <button
                         class="boton-musica"
-                        onclick="controlarMusica()">
+                        onclick="mostrarCancion()">
 
                         🎵 Escuchar nuestra canción
 
                     </button>
 
-                    <!--
-                        Para utilizar la canción:
 
-                        1. Consigue legalmente el archivo de audio.
-                        2. Colócalo junto a este index.html.
-                        3. Llámalo:
+                    <div
+                        id="youtubeMusica"
+                        class="youtube-musica">
 
-                           creo-en-ti.mp3
+                        <iframe
+                            id="videoYoutube"
+                            src=""
+                            title="Creo en Ti - Reik"
+                            frameborder="0"
+                            allow="autoplay; encrypted-media; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
 
-                        La reproducción comenzará cuando
-                        ella pulse el botón.
-
-                    -->
-
-                    <audio
-                        id="cancion"
-                        preload="auto">
-
-                        <source
-                            src="creo-en-ti.mp3"
-                            type="audio/mpeg">
-
-                    </audio>
+                    </div>
 
                 </div>
 
@@ -996,6 +1254,7 @@
 
 
     <script>
+
 
         /* =====================================================
            MENSAJE
@@ -1034,7 +1293,6 @@ te volvería a elegir.
 Una y otra vez.
 
 Porque entre tantas personas,
-entre tantos caminos,
 tu eres mi persona favorita.
 
 Mi chinita,
@@ -1058,11 +1316,13 @@ Te amo. ❤️`;
             const inicio =
                 document.getElementById("inicio");
 
+
             const pagina =
                 document.getElementById("pagina");
 
 
             inicio.classList.add("ocultar");
+
 
             setTimeout(function() {
 
@@ -1091,19 +1351,26 @@ Te amo. ❤️`;
             const elemento =
                 document.getElementById("mensaje");
 
+
             let posicion = 0;
+
 
             const velocidad = 35;
 
 
             function escribir() {
 
-                if (posicion < mensajeTexto.length) {
+                if (
+                    posicion <
+                    mensajeTexto.length
+                ) {
 
                     elemento.textContent +=
                         mensajeTexto.charAt(posicion);
 
+
                     posicion++;
+
 
                     setTimeout(
                         escribir,
@@ -1113,6 +1380,7 @@ Te amo. ❤️`;
                 }
 
             }
+
 
             escribir();
 
@@ -1144,6 +1412,7 @@ Te amo. ❤️`;
 
                 const flor =
                     document.createElement("div");
+
 
                 flor.className =
                     "flor-campo";
@@ -1177,6 +1446,7 @@ Te amo. ❤️`;
                 const cabeza =
                     document.createElement("div");
 
+
                 cabeza.className =
                     "flor-cabeza";
 
@@ -1189,11 +1459,13 @@ Te amo. ❤️`;
                 cabeza.style.width =
                     tamaño + "px";
 
+
                 cabeza.style.height =
                     tamaño + "px";
 
 
                 flor.appendChild(cabeza);
+
 
                 campo.appendChild(flor);
 
@@ -1212,6 +1484,7 @@ Te amo. ❤️`;
             const petalo =
                 document.createElement("div");
 
+
             petalo.className =
                 "petalo";
 
@@ -1221,7 +1494,8 @@ Te amo. ❤️`;
 
 
             const duracion =
-                6 + Math.random() * 6;
+                6 +
+                Math.random() * 6;
 
 
             petalo.style.animationDuration =
@@ -1269,14 +1543,17 @@ Te amo. ❤️`;
             const corazon =
                 document.createElement("div");
 
+
             corazon.className =
                 "corazon";
 
 
             const corazones = [
+
                 "❤️",
                 "💛",
                 "🤍"
+
             ];
 
 
@@ -1335,59 +1612,51 @@ Te amo. ❤️`;
 
 
         /* =====================================================
-           MÚSICA
+           YOUTUBE
         ===================================================== */
 
-        let reproduciendo = false;
+        function mostrarCancion() {
 
-
-        function controlarMusica() {
-
-            const cancion =
+            const reproductor =
                 document.getElementById(
-                    "cancion"
+                    "youtubeMusica"
                 );
 
 
-            if (!reproduciendo) {
+            const video =
+                document.getElementById(
+                    "videoYoutube"
+                );
 
-                cancion.play()
-                    .then(function() {
 
-                        reproduciendo = true;
+            if (
+                !reproductor.classList.contains(
+                    "mostrar"
+                )
+            ) {
 
-                        document.querySelector(
-                            ".boton-musica"
-                        ).textContent =
-                            "⏸️ Pausar nuestra canción";
+                video.src =
+                    "https://www.youtube.com/embed/snFhcHHdzT0?autoplay=1&rel=0";
 
-                    })
-                    .catch(function() {
 
-                        alert(
-                            "Coloca el archivo 'creo-en-ti.mp3' junto al index.html para reproducir la canción."
-                        );
+                reproductor.classList.add(
+                    "mostrar"
+                );
 
-                    });
-
-            }
-
-            else {
-
-                cancion.pause();
-
-                reproduciendo = false;
 
                 document.querySelector(
                     ".boton-musica"
                 ).textContent =
-                    "🎵 Escuchar nuestra canción";
+                    "🎵 Nuestra canción ❤️";
 
             }
 
         }
 
+
     </script>
 
 </body>
-</html> 
+
+</html>
+```
